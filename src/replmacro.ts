@@ -1,13 +1,14 @@
 import { stdout } from 'process';
 import * as vscode from 'vscode';
 const child_process = require('child_process');
+const path = require('path');
 
 export function replmacroCallback(uri: any) {
     if (!vscode.window.activeTextEditor) {
         return;
     }
     const fileName: string = vscode.window.activeTextEditor.document.fileName;
-    child_process.exec(`python helper.py ${fileName}`, (err:any, stdout:string, stderr:string) => {
+    child_process.exec(`python ${__dirname}/helper.py ${fileName}`, (err:any, stdout:string, stderr:string) => {
         if (err) {
             console.log(`err: ${err}`);
             return;
