@@ -10,19 +10,14 @@
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:hello.helloWorld",
-		"onCommand:hello.getPath"
+        "onCommand:hello.helloWorld"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
 				"command": "hello.helloWorld",
-				"title": "hellovscode"
-			},
-			{
-				"command": "hello.getPath",
-				"title": "getpath"
+				"title": "helloWorld"
 			}
 		],
 		"menus": {
@@ -30,10 +25,6 @@
 				{
 					"when": "editorFocus",
 					"command": "hello.helloWorld"
-				},
-				{
-					"when": "editorFocus",
-					"command": "hello.getPath"
 				}
 			]
 		}
